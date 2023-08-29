@@ -1,12 +1,13 @@
-const Modal = () => {
+import React from 'react';
 
-    return (
-    <div class="overlay">
-     <div class="modal">
-       <img src="" alt="" />
-     </div>
+const Modal = ({ largeImageURL, onClose }) => {
+  return (
+    <div className="Overlay" onClick={onClose}>
+      <div className="Modal">
+        <img src={largeImageURL} alt="" />
+      </div>
     </div>
-    ) 
+  );
 };
 
 export default Modal;

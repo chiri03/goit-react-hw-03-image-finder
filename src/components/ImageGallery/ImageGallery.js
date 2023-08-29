@@ -1,12 +1,14 @@
-import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem'
+import React from 'react';
+import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem'; 
 
-const ImageGallery = () => {
-
-    return (
-        <ul class="gallery">
-          <ImageGallery></ImageGallery>
-        </ul>
-    ) 
+const ImageGallery = ({ images, onItemClick }) => {
+  return (
+    <ul className="gallery">
+      {images.map(image => (
+        <ImageGalleryItem key={image.id} image={image} onItemClick={onItemClick} />
+      ))}
+    </ul>
+  );
 };
 
 export default ImageGallery;

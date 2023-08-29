@@ -1,10 +1,16 @@
-const ImageGalleryItem = () => {
+import React from 'react';
 
-    return (
-        <li class="gallery-item">
-          <img src="" alt="" />
-        </li>
-    ) 
+const ImageGalleryItem = ({ image, onItemClick }) => {
+  return (
+    <li className="ImageGalleryItem">
+      <img
+        src={image.webformatURL}
+        alt={image.tags}
+        className="ImageGalleryItem-image"
+        onClick={onItemClick}
+      />
+    </li>
+  );
 };
 
 export default ImageGalleryItem;

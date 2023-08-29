@@ -1,22 +1,35 @@
+import React, { useState } from 'react';
+
 const SearchBar = ({ onSubmit }) => {
+  const [query, setQuery] = useState('');
 
-    return (
-    <header className="searchbar">
-    <form className="form">
-        <button type="submit" className="button">
-        <span className="button-label">Search</span>
-        </button>
+  const handleChange = event => {
+    setQuery(event.target.value);
+  };
 
+  const handleSubmit = event => {
+    event.preventDefault();
+    onSubmit(query);
+  };
+
+  return (
+    <header className="Searchbar">
+      <form className="SearchForm" onSubmit={handleSubmit}>
         <input
-        className="input"
-        type="text"
-        autocomplete="off"
-        autofocus
-        placeholder="Search images and photos"
+          className="SearchForm-input"
+          type="text"
+          autoComplete="off"
+          autoFocus
+          placeholder="Search images and photos"
+          value={query}
+          onChange={handleChange}
         />
-    </form>
+        <button type="submit" className="SearchForm-button">
+          <span className="SearchForm-button-label">Search</span>
+        </button>
+      </form>
     </header>
-    ) 
+  );
 };
 
 export default SearchBar;
