@@ -91,7 +91,7 @@ img {
 }
 
 .SearchForm-button-label {
-  position: absolute;
+  /* position: absolute;
   width: 1px;
   height: 1px;
   padding: 0;
@@ -99,7 +99,9 @@ img {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   clip-path: inset(50%);
-  border: 0;
+  border: 0; */
+  font-size: 12px;
+  color: #212121;
 }
 
 .SearchForm-input {

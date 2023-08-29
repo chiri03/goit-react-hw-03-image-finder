@@ -6,6 +6,7 @@ import Loader from './Loader/Loader';
 import Button from './Button/Button';
 import Modal from './Modal/Modal';
 
+
 const API_KEY = '37237268-001c8e95be6ecdc276e5b14c7';
 const BASE_URL = 'https://pixabay.com/api/';
 
@@ -52,18 +53,20 @@ export const App = () => {
     setSelectedImage(null);
   };
 
-  return (
-    <div className="App">
-      <SearchBar onSubmit={handleSearchSubmit} />
-      <ImageGallery images={images} onItemClick={handleImageClick} />
-      {isLoading && <Loader />}
-      {images.length > 0 && !isLoading && (
-        <Button onClick={() => setPage(page + 1)}>Load More</Button>
-      )}
-      {selectedImage && (
-        <Modal largeImageURL={selectedImage} onClose={handleCloseModal} />
-      )}
-    </div>
-  );
-};
 
+
+    return (
+      <div className="App">
+        <SearchBar onSubmit={handleSearchSubmit} />
+        <ImageGallery images={images} onItemClick={handleImageClick} />
+        {isLoading && <Loader />}
+        {images.length > 0 && !isLoading && (
+          <Button onClick={() => setPage(page + 1)}>Load More</Button>
+        )}
+        {selectedImage && (
+          <Modal largeImageURL={selectedImage} onClose={handleCloseModal} />
+        )}
+              
+      </div>
+    );
+  };
